@@ -7,6 +7,61 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    @*<style>*
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        }
+        
+        li {
+        float: left;
+        }
+
+        li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+        
+
+
+        li.dropdown {
+        display: inline-block;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content{
+        display: block;
+        }
+        </style>
+        
+        *@
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -24,10 +79,19 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
-                    <li>@Html.ActionLink("Professors", "Index", "Professors")</li>
-                    <li>@Html.ActionLink("Students", "Index", "Students")</li>
-                    <li>@Html.ActionLink("CourseDetails", "Index", "CourseDetails")</li>
+                    
+                    <span class="dropdown">
+                        <a href="#" class="btn btn-danger dropdown-toggle" style="margin: top:5px" data-toggle="dropdown" >SD2 Models<span class="caret"></span></a> 
+                        <ul class="dropdown-menu">
+                            <li> @Html.ActionLink("Courses", "Index", "Courses") </li>
+                            <li> @Html.ActionLink("Students", "Index", "Students") </li>
+                            <li> @Html.ActionLink("Professors", "Index", "Professors") </li>
+                            <li> @Html.ActionLink("CourseDetails", "Index", "CourseDetails") </li>
+
+                        </ul>
+
+
+                    </span>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -37,7 +101,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Nathan Morabeto</p>
+            <h3 style="color:rgb(38,190,14);">&copy; @DateTime.Now.Year - Nathan Morabeto</h3>
         </footer>
     </div>
 
