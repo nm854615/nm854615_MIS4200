@@ -11,6 +11,7 @@ namespace nm854615_MIS4200.Migrations.MISContext
         {
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\MISContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(nm854615_MIS4200.DAL.MIS4200Context context)
